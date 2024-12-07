@@ -46,7 +46,7 @@ type FileEdit struct {
 	InputVars interface{}
 }
 
-var prompt = askUser
+var Prompt = askUser
 
 // GenerateSource returns the byte array of a template
 func GenerateSource(fileTemplate string, vars interface{}) ([]byte, error) {
@@ -121,7 +121,7 @@ func (f *FileEdit) UpdateConfig(printDiff, force bool, configFile string) (bool,
 	}
 
 	if !force {
-		approved, err := prompt(configFile, diff)
+		approved, err := Prompt(configFile, diff)
 		if err != nil {
 			return false, diff, err
 		}

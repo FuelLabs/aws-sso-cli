@@ -59,6 +59,7 @@ include help.mk  # place after ALL target and before all other targets
 
 $(DIST_DIR)$(PROJECT_NAME):	$(wildcard */*.go) .prepare
 	go build $(GOBFLAGS) -ldflags='$(LDFLAGS)' -o $(DIST_DIR)$(PROJECT_NAME) ./cmd/aws-sso/...
+	codesign -f -s - $(DIST_DIR)$(PROJECT_NAME) || true
 	@echo "Created: $(DIST_DIR)$(PROJECT_NAME)"
 
 INSTALL_PREFIX ?= /usr/local
@@ -232,6 +233,7 @@ ifeq ($(ARCH), x86_64)
 else
 	CGO_ENABLED=1 GOARCH=amd64 GOOS=darwin SDKROOT=$(shell xcrun --sdk macosx --show-sdk-path) \
 		go build $(GOBFLAGS) -ldflags='$(LDFLAGS)' -o $(DARWIN_BIN) ./cmd/aws-sso/...
+		codesign -f -s - $(DARWIN_BIN)
 endif
 	@echo "Created: $(DARWIN_BIN)"
 
@@ -243,6 +245,7 @@ ifeq ($(ARCH), arm64)
 else
 	CGO_ENABLED=1 GOARCH=arm64 GOOS=darwin SDKROOT=$(shell xcrun --sdk macosx --show-sdk-path) \
 		go build $(GOBFLAGS) -ldflags='$(LDFLAGS)' -o $(DARWINARM64_BIN) ./cmd/aws-sso/...
+		codesign -f -s - $(DARWINARM64_BIN)
 endif
 	@echo "Created: $(DARWINARM64_BIN)"
 

@@ -166,7 +166,7 @@ func main() {
 	runCtx.Cli.ConfigFile = utils.GetHomePath(runCtx.Cli.ConfigFile)
 
 	if _, err := os.Stat(cli.ConfigFile); errors.Is(err, os.ErrNotExist) {
-		log.Warn("No config file found!  Will now prompt you for a basic config...")
+		log.Warn("No config file found!  Will setup a basic Fuel config file...")
 		if err = setupWizard(&runCtx, false, false, runCtx.Cli.Setup.Wizard.Advanced); err != nil {
 			log.Fatal(err.Error())
 		}

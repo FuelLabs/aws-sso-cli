@@ -28,6 +28,7 @@ type SetupCmd struct {
 	Completions CompleteCmd      `kong:"cmd,help='Manage shell completions'"`
 	Wizard      SetupWizardCmd   `kong:"cmd,help='Run the configuration wizard'"`
 	Profiles    SetupProfilesCmd `kong:"cmd,help='Update ~/.aws/config with AWS SSO profiles from the cache'"`
+	Kube        SetupKubeCmd     `kong:"cmd,help='Update ~/.aws/config with AWS SSO profiles and ~/.kube/config with EKS clusters'"`
 	Ecs         SetupEcsCmd      `kong:"cmd,help='Manage ECS Server secrets'"`
 }
 
