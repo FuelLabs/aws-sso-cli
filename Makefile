@@ -1,6 +1,6 @@
-PROJECT_VERSION        := 2.0.0-beta5
-DOCKER_REPO            := synfinatic
-PROJECT_NAME           := aws-sso
+PROJECT_VERSION        := 2.0.0-beta5-eks
+DOCKER_REPO            := FuelLabs
+PROJECT_NAME           := aws-sso-cli
 DOCKER_PROJECT_NAME    := aws-sso-cli-ecs-server
 
 DIST_DIR ?= dist/
