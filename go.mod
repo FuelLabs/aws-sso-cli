@@ -1,8 +1,6 @@
 module github.com/synfinatic/aws-sso-cli
 
-go 1.22.0
-
-toolchain go1.22.5
+go 1.23.0
 
 require (
 	github.com/99designs/keyring v1.2.2
@@ -125,7 +123,7 @@ require (
 	go.opentelemetry.io/otel/metric v1.28.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.28.0 // indirect
 	go.opentelemetry.io/otel/trace v1.28.0 // indirect
-	golang.org/x/oauth2 v0.21.0 // indirect
+	golang.org/x/oauth2 v0.27.0 // indirect
 	golang.org/x/text v0.20.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240701130421-f6361c86f094 // indirect
